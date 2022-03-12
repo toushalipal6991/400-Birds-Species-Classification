@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Predict Birds' Species</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body style="color: white;background-color: black">
+	<h1 class="text-center">Are you a Bird Watcher? No? Yes?</h1>
+	<h2 class="text-center">Select a bird's image and let me tell you which species it belongs to :)</h1>
+	<div style="margin-top: 10%">
+		<form class="text-center" action="/predict" method="post" enctype="multipart/form-data">
+			<ul style="list-style-type: none;">
+				<li style="margin-left: 5%;">
+					<input id="chooseimg" class="text-center" type="file" name="imagefile" class="form-control">
+				</li>
+				<li>
+					<input id="predictspecies" type="submit" class="btn mt-3" value="Predict Species" style="border: 1px solid white;color: black;background-color: yellow">
+				</li>
+			</ul>
+		</form>
+	</div>
+	<br>
+	{% if prediction %}
+	<p class="text-center" id="predtext">{{prediction}}</p>
+	{% endif %}
+	<br>
+	{% if imageloc %}
+	<center style="margin-left: 3%;"><img id="birdimg" src="static/{{imageloc}}" width="220" height="230" style="border: 5px solid white"></center>
+	{% endif %}
+</body>
+
+<script>
+	$("#chooseimg").on('click',function(){
+        $("#predtext").hide();
+        $("#birdimg").hide();
+	});
+	$("#predictspecies").on('click',function(){
+		$( window ).load(function() {
+		  $("#predtext").show();
+		  $("#birdimg").show();
+		});
+		
+	});
+</script>
+</html>
