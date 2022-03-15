@@ -4,6 +4,8 @@
 
 ![Demo](https://github.com/toushalipal6991/400-Birds-Species-Classification/blob/main/deploy2.gif)
 
+## Self-written Medium blog: [400 Birds Species Classification](https://medium.com/mlearning-ai/400-birds-species-classification-f4de768aac4)
+
 ## Aim of this Project
 - This project aims to predict revenue for a set of customers for a time period in the future.
 - Different machine learning & deep learning techniques were used.
